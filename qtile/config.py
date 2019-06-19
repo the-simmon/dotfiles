@@ -62,7 +62,17 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "d", lazy.spawncmd()),
 
-    Key([mod], "c", lazy.spawn("chromium"))
+    Key([mod], "c", lazy.spawn("chromium")),
+
+    Key([mod], "F9", lazy.spawn("xterm -e vim ~/.dotfiles/qtile/config.py")),
+
+    # Sound
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 2- unmute")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 2+ unmute")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -78,7 +88,7 @@ for i in groups:
 
 layouts = [
     layout.Max(),
-    layout.Stack(num_stacks=2)
+    layout.Stack(num_stacks=2) 
 ]
 
 widget_defaults = dict(
@@ -94,7 +104,7 @@ screens = [
             [
                 widget.GroupBox(),
                 widget.Spacer(bar.STRETCH),
-                widget.CheckUpdates(),
+                widget.CheckUpdates(padding=20),
 
                 widget.Systray(),
                 widget.Clock(format='%d-%m-%Y  %H:%M %p'),
@@ -105,8 +115,7 @@ screens = [
             widget.Prompt(),
             widget.WindowName(),
 
-            #widget.Spacer(bar.STRETCH),
-            #widget.CurrentLayout()
+            widget.CurrentLayout()
         ],
             15)
     ),
