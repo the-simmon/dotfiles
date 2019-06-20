@@ -64,7 +64,7 @@ keys = [
     Key([mod, "shift"], "q", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
-    Key([mod, "control"], "q", lazy.shutdown()),
+    Key([mod, "shift", "control"], "q", lazy.shutdown()),
     Key([mod], "d", lazy.spawncmd()),
 
     Key([mod], "c", lazy.spawn("chromium")),
