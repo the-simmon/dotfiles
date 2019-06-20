@@ -69,7 +69,7 @@ keys = [
 
     Key([mod], "c", lazy.spawn("chromium")),
 
-    Key([mod], "F9", lazy.spawn("xterm -e vim ~/.dotfiles/qtile/config.py")),
+    Key([mod], "F9", lazy.spawn("xterm -e vim .dotfiles/qtile/config.py")),
 
     # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -78,6 +78,9 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+
+    # i3lock
+    Key([mod, "shift", "control"], "l", lazy.spawn("i3lock -i .background.png")),
 ]
 
 groups = [Group(i) for i in "123456789"]
