@@ -56,6 +56,7 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
+    Key([mod, 'control'], 'f', lazy.window.toggle_floating()),
     Key([mod, "shift"], "q", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
@@ -88,7 +89,8 @@ for i in groups:
 
 layouts = [
     layout.Max(),
-    layout.Stack(num_stacks=2) 
+    layout.Stack(num_stacks=2),
+    layout.RatioTile()
 ]
 
 widget_defaults = dict(
