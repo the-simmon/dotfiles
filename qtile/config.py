@@ -64,12 +64,13 @@ keys = [
     Key([mod, "shift"], "q", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
-    Key([mod, "shift", "control"], "q", lazy.shutdown()),
+    Key([mod, "mod4", "control"], "q", lazy.shutdown()),
     Key([mod], "d", lazy.spawncmd()),
 
     Key([mod], "c", lazy.spawn("chromium")),
 
     Key([mod], "F9", lazy.spawn("xterm -e vim .dotfiles/qtile/config.py")),
+    Key([mod], "F10", lazy.spawn("xterm -hold  -e cat  .local/share/qtile/qtile.log")),
 
     # Sound
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -95,9 +96,9 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Max(),
+    layout.RatioTile(),
     layout.Stack(num_stacks=2),
-    layout.RatioTile()
+    layout.Max(),
 ]
 
 widget_defaults = dict(
@@ -113,7 +114,6 @@ screens = [
             [
                 widget.GroupBox(),
                 widget.Spacer(bar.STRETCH),
-                widget.CheckUpdates(padding=20),
 
                 widget.Systray(),
                 widget.Clock(format='%d-%m-%Y  %H:%M %p'),
