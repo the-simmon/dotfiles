@@ -30,6 +30,8 @@ from libqtile import layout, bar, widget
 
 from typing import List
 
+MAIN_THEME_COLOR = "#5097fa"
+
 mod = "mod1"
 
 keys = [
@@ -96,9 +98,9 @@ for i in groups:
     ])
 
 layouts = [
-    layout.RatioTile(),
-    layout.Stack(num_stacks=2),
-    layout.Max(),
+    layout.RatioTile(border_focus=MAIN_THEME_COLOR),
+    layout.Stack(num_stacks=2, border_focus=MAIN_THEME_COLOR),
+    layout.Max(border_focus=MAIN_THEME_COLOR),
 ]
 
 widget_defaults = dict(
@@ -112,13 +114,14 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(),
+                widget.GroupBox(this_current_screen_border=MAIN_THEME_COLOR, hide_unused=True, use_mouse_wheel=False),
                 widget.Spacer(bar.STRETCH),
 
                 widget.Systray(),
                 widget.Clock(format='%d-%m-%Y  %H:%M %p'),
             ],
             24,
+	    background="#1d1d1d",
         ),
         top=bar.Bar([
             widget.Prompt(),
