@@ -125,9 +125,9 @@ screens = [
         ),
         top=bar.Bar([
             widget.Prompt(),
-            widget.WindowName(),
+            widget.WindowName(font="adobe-source-code-pro", fontsize=11),
 
-            widget.CurrentLayout()
+            widget.CurrentLayout(font="adobe-source-code-pro", fontsize=10)
         ],
             15)
     ),
