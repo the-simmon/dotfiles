@@ -39,5 +39,5 @@ set noswapfile
 
 " set cursor to solid vertical bar when in insert mode
 let &t_SI .= "\<Esc>[6 q"
-" set cursor to solid block when in insert mode
+" set cursor to solid block when in normal mode
 let &t_EI .= "\<Esc>[2 q"
