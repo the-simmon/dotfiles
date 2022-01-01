@@ -182,6 +182,7 @@ bindsym $mod+End mode "$mode_system"
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 2+ unmute"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 2- unmute"
 bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+bindsym XF86AudioMicMute exec "amixer -q sset Capture,0 toggle"
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
