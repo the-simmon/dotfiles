@@ -197,6 +197,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 #chrome shortcut
 bindsym $mod+c exec chromium
 
+#chrome incognito shortcut
+bindsym $mod+Control+c exec chromium --incognito
+
 #shortcut to this document
 bindsym $mod+F9 exec leafpad ~/.config/i3/config
 
